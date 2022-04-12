@@ -1,0 +1,15 @@
+To full database:
+
+https://finalprojectgame-b2bad-default-rtdb.firebaseio.com/
+
+To accounts:
+
+https://finalprojectgame-b2bad-default-rtdb.firebaseio.com/accounts
+
+To classes:
+
+https://finalprojectgame-b2bad-default-rtdb.firebaseio.com/classes
+
+To Instruction messages:
+
+https://finalprojectgame-b2bad-default-rtdb.firebaseio.com/instructionMsgs
