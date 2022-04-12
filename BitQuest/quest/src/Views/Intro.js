@@ -6,27 +6,27 @@ function Intro({ classes }) {
 
 
   return (
-    <div>
-      <section>
+    <div className='intro_container'>
+      <section className='intro_classHeader'>
         <h2>Select a class: </h2>
-        <ul>
-          <li><h4>Mage</h4></li>
-          <li><h4>Fighter</h4></li>
-          <li><h4>Rouge</h4></li>
-          <li><h4>Jester</h4></li>
-          <li><h4>Ogre</h4></li>
+        <ul className='intro_classListContainer'>
+          <li><button className='intro_classListButton'>Mage</button></li>
+          <li><button className='intro_classListButton'>Fighter</button></li>
+          <li><button className='intro_classListButton'>Rouge</button></li>
+          <li><button className='intro_classListButton'>Jester</button></li>
+          <li><button className='intro_classListButton'>Ogre</button></li>
         </ul>
       </section>
-      <section>
-        <div>
+      <section className='intro_classInfoContainer'>
+        <div className='intro_classImg'>
           Insert image here
         </div>
-        <div>
-          Stats based on scale of 10
-          <section>
+        <div className='intro_classStatsContainer'>
+          <p>Stats based on scale of 10</p>
+          <section className='intro_classStatBlock'>
             <h3>Stats:</h3>
           </section>
-          <section>
+          <section className='intro_classStatBlock'>
             <h3>Moves:</h3>
           </section>
         </div>
