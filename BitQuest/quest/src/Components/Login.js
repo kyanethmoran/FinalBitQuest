@@ -27,12 +27,12 @@ function Login({setShowLogin, setCurrentUser, currentUser, users, usernames}) {
   }
 
   return (
-    <div>
+    <div className='login_formContainer'>
         <h2>Login</h2>
-        <form onSubmit={handleLogin}>
-            <input type="text" placeholder="Username" name='username'></input>
-            <input type="password" placeholder='Password' name='password'></input>
-            <button>Login</button> 
+        <form className='login_formFieldsContainer' onSubmit={handleLogin}>
+            <input className='login_formFields' type="text" placeholder="Username" name='username'></input>
+            <input className='login_formFields' type="password" placeholder='Password' name='password'></input>
+            <button className='login_button'>Login</button> 
         </form>
         <section>
             <p>or</p>

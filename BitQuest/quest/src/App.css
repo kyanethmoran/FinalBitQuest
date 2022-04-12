@@ -7,3 +7,11 @@
   font-family: 'VT323';
   text-align: center;
 }
+
+.login_formContainer{
+  display: flex;
+  flex-direction: column;
+  border: solid black 1px;
+  font-family: 'VT323';
+  text-align: center;
+}
