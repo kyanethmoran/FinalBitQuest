@@ -1,6 +1,9 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom'
 
-function Login({setShowLogin, users}) {
+function Login({setShowLogin, setCurrentUser, currentUser, users, usernames}) {
+
+  const navigate = useNavigate()
 
   const handleSignUp = () => {
     setShowLogin(false)
@@ -10,7 +13,17 @@ function Login({setShowLogin, users}) {
     e.preventDefault()
     let username = e.target.username.value
     let password = e.target.password.value
-    console.log('login')
+    console.log('login', username, password)
+
+    if(usernames.includes(username)) {
+      console.log('valid request')
+      window.sessionStorage.setItem('currentUser', JSON.stringify(users[username]))
+      navigate('/Intro')
+    }else {
+      console.log('invalid request')
+
+    }
+    console.log(window.sessionStorage.getItem('currentUser'))
   }
 
   return (
