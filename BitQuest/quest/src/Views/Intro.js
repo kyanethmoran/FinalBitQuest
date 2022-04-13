@@ -24,10 +24,10 @@ function Intro({ classes }) {
         <div className='intro_classStatsContainer'>
           <p>Stats based on scale of 10</p>
           <section className='intro_classStatBlock'>
-            <h3>Stats:</h3>
+            <p>Stats:</p>
           </section>
           <section className='intro_classStatBlock'>
-            <h3>Moves:</h3>
+            <p>Moves:</p>
           </section>
         </div>
 
