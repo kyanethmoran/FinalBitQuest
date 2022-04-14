@@ -2,13 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import BitQuestHeader from "./BitQuestHeader";
 
-function Login({
-  setShowLogin,
-  setCurrentUser,
-  currentUser,
-  users,
-  usernames,
-}) {
+function Login({ setShowLogin, users, usernames }) {
   const navigate = useNavigate();
   const footer = require("../Media/bitQuestFooter.png");
 

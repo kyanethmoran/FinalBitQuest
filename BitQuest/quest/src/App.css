@@ -196,6 +196,10 @@ margin-top: 10vh;
   border-bottom: solid 3px #FBFF4F;
   color: #FBFF4F;
 }
+.intro_classListButtonActive{
+  border-bottom: solid 3px #FBFF4F;
+  color: #FBFF4F;
+}
 
 .intro_classInfoContainer{
   display: flex;
