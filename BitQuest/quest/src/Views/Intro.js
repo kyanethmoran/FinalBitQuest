@@ -5,44 +5,52 @@ function Intro({classes}) {
   let currentUser = JSON.parse(sessionStorage.getItem('currentUser'))
   console.log(currentUser, 'currentUser in Intro View')
   
-  let { fighterClass, jesterClass, orgreClass, rogueClass, wizardClass } = classes
+  let { fighterClass, jesterClass, ogreClass, rogueClass, wizardClass } = classes
   
   let [selectedClass, setSelectedClass] = useState(wizardClass)
+  let [activeClass, setActiveClass] = useState('Wizard')
 
   const handleClassSelection = (e) => {
     console.log(e.target.innerHTML)
     switch (e.target.innerHTML) {
       case 'Fighter':
         setSelectedClass(fighterClass)
+        setActiveClass('Fighter')
         break
       case 'Jester':
         setSelectedClass(jesterClass)
+        setActiveClass('Jester')
         break
-      case 'Orgre':
-        setSelectedClass(orgreClass)
+      case 'Ogre':
+        setSelectedClass(ogreClass)
+        setActiveClass('Ogre')
         break
       case 'Rouge':
         setSelectedClass(rogueClass)
+        setActiveClass('Rouge')
         break
       case 'Wizard':
         setSelectedClass(wizardClass)
+        setActiveClass('Wizard')
         break
       default:
         setSelectedClass(wizardClass)
+        setActiveClass('Wizard')
         break
     }
   }
+  console.log(activeClass, 'activeClass in Intro View')
 
   return (
     <div className='intro_container'>
       <section className='intro_classHeader'>
         <h2>Select a class: </h2>
         <ul className='intro_classListContainer'>
-          <li onClick={handleClassSelection} className='intro_classListButton'>Wizard</li>
-          <li onClick={handleClassSelection} className='intro_classListButton'>Fighter</li>
-          <li onClick={handleClassSelection} className='intro_classListButton'>Rouge</li>
-          <li onClick={handleClassSelection} className='intro_classListButton'>Jester</li>
-          <li onClick={handleClassSelection} className='intro_classListButton'>Ogre</li>
+          <li onClick={handleClassSelection} className={activeClass === 'Wizard' ? "intro_classListButtonActive" :'intro_classListButton'}>Wizard</li>
+          <li onClick={handleClassSelection} className={activeClass === 'Fighter' ? "intro_classListButtonActive" :'intro_classListButton'}>Fighter</li>
+          <li onClick={handleClassSelection} className={activeClass === 'Rouge' ? "intro_classListButtonActive" :'intro_classListButton'}>Rouge</li>
+          <li onClick={handleClassSelection} className={activeClass === 'Jester' ? "intro_classListButtonActive" :'intro_classListButton'}>Jester</li>
+          <li onClick={handleClassSelection} className={activeClass ===  'Ogre' ? "intro_classListButtonActive" :'intro_classListButton'}>Ogre</li>
         </ul>
       </section>
 

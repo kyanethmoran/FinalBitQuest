@@ -197,6 +197,13 @@ margin-top: 10vh;
   color: #FBFF4F;
 }
 .intro_classListButtonActive{
+  margin-right: 15px;
+  border: none;
+  height: 6vh;
+  font-family: 'VT323';
+  font-size: 25px;
+  background-color: #A2B38B;
+  padding: 5px;
   border-bottom: solid 3px #FBFF4F;
   color: #FBFF4F;
 }
