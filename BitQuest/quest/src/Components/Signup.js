@@ -39,11 +39,8 @@ export default function Signup({ setShowLogin, usernames, setCurrentUser, curren
 
     setShowLogin(true)
     window.sessionStorage.setItem('currentUser', JSON.stringify(newUserObj))
-    console.log(currentUser, 'currentUser in Signup')
     navigate('/Intro')
   }
-
-  console.log(usernames, 'in signup')
 
   return (
     <div className='signUp_formContainer'>

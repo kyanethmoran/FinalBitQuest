@@ -1,17 +1,25 @@
 import React, {useState} from 'react'
+import BitQuestHeader from '../Components/BitQuestHeader'
 import ClassPreview from '../Components/ClassPreview'
+import { useNavigate } from 'react-router-dom'
 
 function Intro({classes}) {
-  let currentUser = JSON.parse(sessionStorage.getItem('currentUser'))
-  console.log(currentUser, 'currentUser in Intro View')
-  
+  const navigate = useNavigate(); 
   let { fighterClass, jesterClass, ogreClass, rogueClass, wizardClass } = classes
-  
+
   let [selectedClass, setSelectedClass] = useState(wizardClass)
   let [activeClass, setActiveClass] = useState('Wizard')
 
+  const toInstructions = () =>{
+    navigate('/Instruction')
+  }
+
+  const handleNext = () =>{
+    console.log(selectedClass)
+  }
+
   const handleClassSelection = (e) => {
-    console.log(e.target.innerHTML)
+
     switch (e.target.innerHTML) {
       case 'Fighter':
         setSelectedClass(fighterClass)
@@ -39,10 +47,10 @@ function Intro({classes}) {
         break
     }
   }
-  console.log(activeClass, 'activeClass in Intro View')
 
   return (
     <div className='intro_container'>
+      <BitQuestHeader />
       <section className='intro_classHeader'>
         <h2>Select a class: </h2>
         <ul className='intro_classListContainer'>
@@ -58,6 +66,12 @@ function Intro({classes}) {
         
         <ClassPreview selectedClass={selectedClass}/>
 
+      </section>
+
+      {/* temp button to go to instructions so i can work on that */}
+      <section>
+        <button onClick={toInstructions}>Next</button>
+        <button onClick={handleNext}>Do not click</button>
       </section>
 
       

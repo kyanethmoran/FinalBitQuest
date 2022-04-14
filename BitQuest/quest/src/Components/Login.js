@@ -14,19 +14,14 @@ function Login({ setShowLogin, users, usernames }) {
     e.preventDefault();
     let username = e.target.username.value;
     let password = e.target.password.value;
-    console.log("login", username, password);
 
     if (usernames.includes(username)) {
-      console.log("valid request");
       window.sessionStorage.setItem(
         "currentUser",
         JSON.stringify(users[username])
       );
       navigate("/Intro");
-    } else {
-      console.log("invalid request");
     }
-    console.log(window.sessionStorage.getItem("currentUser"));
   };
 
   return (

@@ -6,6 +6,7 @@ import Intro from "./Views/Intro";
 import Battle from "./Views/Battle";
 import GameInterlude from "./Views/GameInterlude";
 import Error from "./Views/Error";
+import Instructions from "./Views/Instructions"
 import "./App.css";
 
 
@@ -32,18 +33,16 @@ function App() {
     Object.keys(accounts).forEach((key) => {
       usernames.push(key);
     });
-    // Object.keys(instructionMsgs).forEach((key)=> {
-    //   messages.push(key);
-    // });
-    //console.log(usernames, "usernames");
-    //console.log(messages, 'messages')
+    Object.keys(instructionMsgs).forEach((key)=> {
+      messages.push(key);
+    });
 
     return (
       <Router>
         <Routes>
           <Route path="/" element={<Home usernames={usernames} users={accounts} />} />
           <Route path="/Intro" element={<Intro classes={classes} />} />
-          <Route path="/Instruction" element={<Intro />} />
+          <Route path="/Instruction" element={<Instructions messages={messages}/>} />
           <Route path="/Battle" element={<Battle />} />
           <Route path="/Game" element={<GameInterlude />} />
           <Route path="*" element={<Error />} />

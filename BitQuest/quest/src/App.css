@@ -153,7 +153,7 @@ margin-top: 10vh;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 80vh;
   padding-top: 100px;
@@ -168,6 +168,7 @@ margin-top: 10vh;
 }
 
 .intro_classHeader h2{
+  font-size: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -187,7 +188,7 @@ margin-top: 10vh;
   border: none;
   height: 6vh;
   font-family: 'VT323';
-  font-size: 25px;
+  font-size: 40px;
   background-color: #A2B38B;
   padding: 5px;
 }
@@ -201,7 +202,7 @@ margin-top: 10vh;
   border: none;
   height: 6vh;
   font-family: 'VT323';
-  font-size: 25px;
+  font-size: 40px;
   background-color: #A2B38B;
   padding: 5px;
   border-bottom: solid 3px #FBFF4F;
@@ -218,15 +219,15 @@ margin-top: 10vh;
 }
 
 .intro_classImg{
-  height: 50vh;
-  width: 15vw;
+  height: 55vh;
+  width: 20vw;
   border-radius: 5px;
   background-color: #FAFDD6;
 }
 
 .intro_classStatsContainer{
-  width: 30vw;
-  height: 50vh;
+  width: 55vw;
+  height: 55vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -234,6 +235,7 @@ margin-top: 10vh;
   align-items: center;
   border-radius: 5px;
   background-color: #E6BA95;
+  font-family: 'VT323';
 }
 
 .intro_classStatsContainer p{
@@ -243,8 +245,15 @@ margin-top: 10vh;
  opacity: 0.8;
 }
 
+.intro_classStatsHeader {
+  font-size: 28px;
+}
+.intro_classStatsInfo{
+  font-size: 35px;
+}
+
 .intro_classStatBlock p{
-  border: 1px black solid;
+  /* border: 1px black solid; */
   color: black;
   width: 150px;
   margin-left: 15px;
@@ -253,5 +262,42 @@ margin-top: 10vh;
 
 .intro_classStatBlock{
   width: 50%;
+  height: 100%;
 }
+
+/* instructions component */
+.instructions_container{
+  background-color: #E4E9B3;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.instructions_msgDisplay{
+  height: 60vh;
+}
+.instructions_buttonsContainer{
+  width: 100vw;
+  height: 15vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.instructions_button{
+  
+}
+
+/* message display component */
+.messageDisplay_container, .messageDisplay_finalContainer{
+  height: 100%;
+  width: 80vw;
+  font-size: 45px;
+  
+}
+
   
