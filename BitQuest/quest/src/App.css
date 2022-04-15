@@ -250,6 +250,7 @@ margin-top: 10vh;
 }
 .intro_classStatsInfo{
   font-size: 35px;
+  width: 100%;
 }
 
 .intro_classStatBlock p{
@@ -258,11 +259,28 @@ margin-top: 10vh;
   width: 150px;
   margin-left: 15px;
   font-weight: bolder;
+  text-align: left;
+  padding-left: 25px;
 }
 
 .intro_classStatBlock{
   width: 50%;
   height: 100%;
+}
+
+.intro_classStatBlock span{
+  padding-left: 6rem;
+}
+.intro_classStatBlock p{
+  padding-left: 4rem;
+  font-size: 20px;
+}
+.intro_classStatBlock li{
+  padding-left: 2rem;
+  list-style: none;
+  font-size: 20px;
+  font-weight: bolder;
+  
 }
 
 /* instructions component */
@@ -289,15 +307,27 @@ margin-top: 10vh;
   justify-content: space-around;
 }
 .instructions_button{
-  
+  border: none;
+  height: 8vh;
+  font-family: 'VT323';
+  font-size: 50px;
+  background-color: transparent;
+  padding: 5px;
 }
 
 /* message display component */
 .messageDisplay_container, .messageDisplay_finalContainer{
+    background-color: #E4E9B3;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100vh;
+}
+.messageDisplay_textContainer p{
   height: 100%;
-  width: 80vw;
-  font-size: 45px;
-  
+  font-family: 'VT323';
+  border: 2px solid black;
 }
 
   

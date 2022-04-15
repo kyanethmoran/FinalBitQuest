@@ -9,7 +9,7 @@ function ClassPreview({ selectedClass }) {
       <div className="intro_classStatsContainer">
         <p><span className="intro_classStatsHeader">Stats based on scale of 10</span></p>
         <section className="intro_classStatBlock">
-          <p><span className="intro_classStatsInfo">Stats:</span></p>
+          <h4><span className="intro_classStatsInfo">Stats:</span></h4>
           <p>Agility: {baseStats.agility}</p>
           <p>Health: {baseStats.health}</p>
           <p>MagicAttack: {baseStats.magicAttack}</p>
@@ -18,7 +18,7 @@ function ClassPreview({ selectedClass }) {
           <p>PhysicalDefense: {baseStats.physicalDefense}</p>
         </section>
         <section className="intro_classStatBlock">
-          <p><span className="intro_classStatsInfo">Moves:</span></p>
+          <h4><span className="intro_classStatsInfo">Moves:</span></h4>
           <ul>
             {Object.keys(moves).map((move, i) => {
               return <li key={i}>{move}: {moves[move].attack}</li>;
