@@ -143,9 +143,8 @@ function Intro({ classes }) {
 
       {/* temp button to go to instructions so i can work on that */}
       <section>
-        <button onClick={toInstructions}>Next</button>
         <form onSubmit={handleNext}>
-          <button>Do not click</button>
+          <button>Next</button>
           <input type="text" name="saveName" placeholder="Save Name" required />
         </form>
       </section>

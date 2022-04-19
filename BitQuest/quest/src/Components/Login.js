@@ -20,7 +20,7 @@ function Login({ setShowLogin, users, usernames }) {
         "currentUser",
         JSON.stringify(users[username])
       );
-      navigate("/Intro");
+      navigate("/Saves");
     }
   };
 

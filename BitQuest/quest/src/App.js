@@ -7,12 +7,14 @@ import Battle from "./Views/Battle";
 import GameInterlude from "./Views/GameInterlude";
 import Error from "./Views/Error";
 import Instructions from "./Views/Instructions"
+import Saves from "./Views/Saves";
 import "./App.css";
 
 
 function App() {
   const usersURL = "https://finalprojectgame-b2bad-default-rtdb.firebaseio.com/.json";
   const [databaseData, setDatabaseData] = useState(null);
+  const [player, setPlayer] = useState()
   const usernames = [];
   const messages = [];
 
@@ -29,7 +31,7 @@ function App() {
   if (databaseData === null) {
     return <div>Loading...</div>;
   } else {
-    let { accounts, classes, instructionMsgs } = databaseData;
+    let { accounts, classes, instructionMsgs, enemies } = databaseData;
     Object.keys(accounts).forEach((key) => {
       usernames.push(key);
     });
@@ -43,8 +45,9 @@ function App() {
           <Route path="/" element={<Home usernames={usernames} users={accounts} />} />
           <Route path="/Intro" element={<Intro classes={classes} />} />
           <Route path="/Instruction" element={<Instructions messages={messages}/>} />
-          <Route path="/Battle" element={<Battle />} />
+          <Route path="/Battle" element={<Battle enemiesArray={enemies} player={player}/>} />
           <Route path="/Game" element={<GameInterlude />} />
+          <Route path="/Saves" element={<Saves player={player} setPlayer={setPlayer} />} />
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>

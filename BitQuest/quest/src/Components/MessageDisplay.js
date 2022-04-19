@@ -1,6 +1,8 @@
 import React from "react";
+import {useNavigate} from 'react-router-dom'
 
 function MessageDisplay({ index, setIndex, messages }) {
+  const navigate = useNavigate();
   const msgArry = ['Welcome, player', "BitQuest is a turn based game.....", "KILL JOHN LENNON", "Since this is the last message in the array it needs to render a play button"];
 
   let handleNext = () => {
@@ -22,7 +24,7 @@ function MessageDisplay({ index, setIndex, messages }) {
           <p>{msgArry[index]}</p>
         </div>
       <section className='instructions_buttonsContainer'>
-            <button className='instructions_button' >Play</button>
+            <button className='instructions_button' onClick={() => { navigate('/Battle')}}>Play</button>
         </section>
       </div>
     )
