@@ -43,7 +43,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home usernames={usernames} users={accounts} />} />
-          <Route path="/Intro" element={<Intro classes={classes} />} />
+          <Route path="/Intro" element={<Intro classes={classes} setPlayer={setPlayer} player={player} />} />
           <Route path="/Instruction" element={<Instructions messages={messages}/>} />
           <Route path="/Battle" element={<Battle enemiesArray={enemies} player={player}/>} />
           <Route path="/Game" element={<GameInterlude />} />

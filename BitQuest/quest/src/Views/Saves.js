@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 export default function Saves({setPlayer, player}) {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   let currentUser = JSON.parse(window.sessionStorage.getItem("currentUser"));
   let { characterSaves } = currentUser;
 
@@ -13,6 +13,8 @@ export default function Saves({setPlayer, player}) {
       setPlayer(characterSaves[saveName])
       console.log('current player is', player)
       navigate("/Instruction")
+
+      
   }
 
   return (

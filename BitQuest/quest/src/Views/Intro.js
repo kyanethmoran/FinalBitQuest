@@ -4,7 +4,7 @@ import ClassPreview from "../Components/ClassPreview";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function Intro({ classes }) {
+function Intro({ classes, setPlayer, player }) {
   const navigate = useNavigate();
   let currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
   let username = Object.keys(currentUser)[0];
@@ -16,10 +16,6 @@ function Intro({ classes }) {
   
   let [selectedClass, setSelectedClass] = useState(wizardClass);
   let [activeClass, setActiveClass] = useState("Wizard");
-  
-  const toInstructions = () => {
-    navigate("/Instruction");
-  };
   
   const handleNext = (e) => {
     e.preventDefault();
@@ -33,11 +29,9 @@ function Intro({ classes }) {
       [saveName]: selectedClass,
     };
     window.sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
-    console.log(currentUser, "current user");
     document.getElementsByName("saveName")[0].value = "";
     let {characterSaves} = currentUser
-    console.log(username)
-    
+    console.log(username, 'username')
     
     let URL = `https://finalprojectgame-b2bad-default-rtdb.firebaseio.com/accounts/${username}/characterSaves.json`
     axios.patch(URL, characterSaves)
@@ -45,7 +39,8 @@ function Intro({ classes }) {
       console.log(res, 'datta that was added');
     })
     console.log(characterSaves)
-
+    setPlayer(selectedClass);
+    console.log(player, "player");
     navigate("/Instruction");
   };
 
