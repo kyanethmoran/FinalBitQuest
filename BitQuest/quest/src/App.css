@@ -283,6 +283,25 @@ margin-top: 10vh;
   
 }
 
+/* saves component */
+.save_header{
+  font-family: 'VT323';
+}
+.save_cardContainer{
+  display: flex;
+  justify-content: space-around;
+}
+.save_card{
+  border: 2px black solid;
+  border-radius: 5%;
+  /* width: 40%; */
+  margin: 2px 16px;
+}
+.save_buttonContainer{
+  display: flex;
+  justify-content: center;
+}
+
 /* instructions component */
 .instructions_container{
   background-color: #E4E9B3;

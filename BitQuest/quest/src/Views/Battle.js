@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
-import PlayerCard from "../Components/PlayerCard";
-import EnemyCard from "../Components/EnemyCard";
+import ActiveBattleView from "./ActiveBattleView";
 
 function Battle({ enemiesArray, player }) {
   let navigate = useNavigate();
@@ -32,11 +31,7 @@ function Battle({ enemiesArray, player }) {
     );
   } else {
     return (
-      <div>
-          <PlayerCard player={player} />
-          <hr />
-          <EnemyCard enemy={currentEnemy} />
-      </div>
+      <ActiveBattleView player={player} enemy={currentEnemy} />
     );
   }
 }

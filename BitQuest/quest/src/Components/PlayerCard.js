@@ -3,6 +3,7 @@ import React from "react";
 function PlayerCard({ player }) {
   console.log(player, "from playcard");
 
+  let { playerName } = player;
   let { baseStats } = player;
   let {
     agility,
@@ -10,13 +11,12 @@ function PlayerCard({ player }) {
     magicAttack,
     magicDefense,
     physicalAttack,
-    physicalDefense,
+    physicalDefense
   } = baseStats;
 
   return (
     <>
-      <h2>WE NEED TO ADD PLAYER NAME TO SAVE OBJECT</h2>
-      <h2>{player.class}</h2>
+      <h2>{playerName}</h2>
       <h3>Health</h3>
       <h4>{health}</h4>
       <h3>Agility</h3>
