@@ -10,10 +10,10 @@ export default function Saves({setPlayer, player}) {
 
   let handleClick = (e) => {
       let saveName = e.target.id;
-      console.log(saveName, "save name");
-      console.log(characterSaves[saveName], "character saves");
+      //console.log(saveName, "save name");
+      //console.log(characterSaves[saveName], "character saves");
       setPlayer({...characterSaves[saveName], playerName: accountDetails.userName});
-      console.log('current player is', player)
+      //console.log('current player is', player)
       navigate("/Instruction")
 
       

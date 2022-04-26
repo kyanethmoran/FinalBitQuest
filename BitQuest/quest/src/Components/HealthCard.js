@@ -1,12 +1,17 @@
 import React from 'react'
-import ProgressBar from 'react-bootstrap/ProgressBar'
+import { LinearProgress } from '@mui/material';
+
+
 
 function HealthCard({name, currentHealth}) {
+  // console.log(currentHealth, 'current health')
+  // console.log(LinearProgress, 'progress bar')
   return (
     <>
         <h2>{name}</h2>
-        <ProgressBar now={currentHealth} />
-        <button>down by 10</button>
+    
+        <LinearProgress variant="determinate" value={currentHealth} />
+        
     </>
   )
 }

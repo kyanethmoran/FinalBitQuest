@@ -46,7 +46,7 @@ function App() {
           <Route path="/Intro" element={<Intro classes={classes} setPlayer={setPlayer} player={player} />} />
           <Route path="/Instruction" element={<Instructions messages={messages}/>} />
           <Route path="/Battle" element={<Battle enemiesArray={enemies} player={player}/>} />
-          <Route path="/Game" element={<GameInterlude />} />
+          <Route path="/PostGame" element={<GameInterlude />} />
           <Route path="/Saves" element={<Saves player={player} setPlayer={setPlayer} />} />
           <Route path="*" element={<Error />} />
         </Routes>
