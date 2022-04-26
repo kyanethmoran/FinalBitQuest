@@ -20,6 +20,7 @@ function Login({ setShowLogin, users, usernames }) {
         "currentUser",
         JSON.stringify(users[username])
       );
+      window.sessionStorage.setItem("username", username);
       navigate("/Saves");
     }
   };

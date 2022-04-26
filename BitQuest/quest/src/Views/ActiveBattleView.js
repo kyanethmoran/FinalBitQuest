@@ -4,7 +4,7 @@ import EnemyCard from "../Components/EnemyCard";
 import HUD from "../Components/HUD"
 
 function ActiveBattleView({ player, enemy }) {
-  // console.log(player, "player");
+  console.log(player, "player from ActiveBattleView");
   let {moves} = player;
   // console.log(enemy, "enemy");
 
@@ -30,7 +30,7 @@ function ActiveBattleView({ player, enemy }) {
     <>
       <div className="row">
         <section style={{ margin: "60px" }}>
-          <PlayerCard player={player} playerHealth={playerHealth} />
+          <PlayerCard playerHealth={playerHealth} />
         </section>
 
         <section style={{ margin: "60px" }}>

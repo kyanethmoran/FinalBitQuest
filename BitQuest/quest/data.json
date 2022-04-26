@@ -1,0 +1,232 @@
+{
+  "classes": {
+    "wizardClass": {
+      "baseStats": {
+        "health": 100,
+        "magicAttack": 5,
+        "magicDefense": 5,
+        "physicalAttack": 2,
+        "physicalDefense": 2,
+        "agility": 5
+      },
+      "moves": {
+        "Fireball": {
+          "attack": 2,
+          "cooldown": 1
+        },
+        "Divine Light": {
+          "attack": 1,
+          "cooldown": 2
+        },
+        "Lightning Bolt": {
+          "attack": 4,
+          "cooldown": 3
+        }
+      }
+    },
+    "fighterClass": {
+      "baseStats": {
+        "health": 100,
+        "magicAttack": 5,
+        "magicDefense": 5,
+        "physicalAttack": 2,
+        "physicalDefense": 2,
+        "agility": 5
+      },
+      "moves": {
+        "Swift Slam": {
+          "attack": 2,
+          "cooldown": 1
+        },
+        "Pounding Fists": {
+          "attack": 1,
+          "cooldown": 2
+        },
+        "Gods Fury": {
+          "attack": 4,
+          "cooldown": 3
+        }
+      }
+    },
+    "rogueClass": {
+      "baseStats": {
+        "health": 100,
+        "magicAttack": 3,
+        "magicDefense": 3,
+        "physicalAttack": 3,
+        "physicalDefense": 3,
+        "agility": 7
+      },
+      "moves": {
+        "Backstab": {
+          "attack": 4,
+          "cooldown": 1
+        },
+        "Swift Attack": {
+          "attack": 1,
+          "cooldown": 2
+        },
+        "Poisoned Blade": {
+          "attack": 4,
+          "cooldown": 3
+        }
+      }
+    },
+    "jesterClass": {
+      "baseStats": {
+        "health": 100,
+        "magicAttack": 2,
+        "magicDefense": 2,
+        "physicalAttack": 2,
+        "physicalDefense": 2,
+        "agility": 2
+      },
+      "moves": {
+        "Mockery": {
+          "attack": 2,
+          "cooldown": 1
+        },
+        "Jest": {
+          "attack": 1,
+          "cooldown": 2
+        },
+        "Spite": {
+          "attack": 4,
+          "cooldown": 3
+        }
+      }
+    },
+    "ogreClass": {
+      "baseStats": {
+        "health": 100,
+        "magicAttack": 2,
+        "magicDefense": 2,
+        "physicalAttack": 7,
+        "physicalDefense": 7,
+        "agility": 2
+      },
+      "moves": {
+        "Shield Bash": {
+          "attack": 2,
+          "cooldown": 1
+        },
+        "Hammer Toss": {
+          "attack": 1,
+          "cooldown": 2
+        },
+        "Cannon Ball": {
+          "attack": 4,
+          "cooldown": 3
+        }
+      }
+    }
+  },
+  "instructionMsgs": {
+    "placeholder": "placeholder text"
+  },
+  "accounts": {
+    "dummyUser": {
+      "accountDetails": {
+        "userName": "dummyUser",
+        "password": "admin",
+        "email": "2001g4m3r@hotmail.com",
+        "name": "Fran"
+      },
+      "characterSaves": {
+        "save1": {
+          "baseStats": {
+            "health": 100,
+            "magicAttack": 5,
+            "magicDefense": 5,
+            "physicalAttack": 2,
+            "physicalDefense": 2,
+            "agility": 5
+          },
+          "moves": {
+            "Fireball": {
+              "attack": 2,
+              "cooldown": 1
+            },
+            "Divine Light": {
+              "attack": 1,
+              "cooldown": 2
+            },
+            "Lightning Bolt": {
+              "attack": 4,
+              "cooldown": 3
+            }
+          },
+          "utils": {
+            "expPoints": 100,
+            "scorePoints": 0
+          }
+        }
+      }
+    }
+  },
+  "enemies": [
+    {
+      "monsterName": "imp",
+      "health": 15,
+      "magicAttack": 2,
+      "magicDefense": 2,
+      "physicalAttack": 1,
+      "physicalDefense": 1,
+      "agility": 5
+    },
+    {
+      "monsterName": "goblin",
+      "health": 15,
+      "magicAttack": 1,
+      "magicDefense": 1,
+      "physicalAttack": 2,
+      "physicalDefense": 2,
+      "agility": 5
+    },
+    {
+      "monsterName": "kobold",
+      "health": 15,
+      "magicAttack": 1,
+      "magicDefense": 1,
+      "physicalAttack": 1,
+      "physicalDefense": 1,
+      "agility": 7
+    },
+    {
+      "monsterName": "skeleton",
+      "health": 25,
+      "magicAttack": 1,
+      "magicDefense": 3,
+      "physicalAttack": 3,
+      "physicalDefense": 2,
+      "agility": 3
+    },
+    {
+      "monsterName": "zombie",
+      "health": 30,
+      "magicAttack": 1,
+      "magicDefense": 3,
+      "physicalAttack": 2,
+      "physicalDefense": 3,
+      "agility": 1
+    },
+    {
+      "monsterName": "orc",
+      "health": 50,
+      "magicAttack": 1,
+      "magicDefense": 2,
+      "physicalAttack": 5,
+      "physicalDefense": 5,
+      "agility": 5
+    },
+    {
+      "monsterName": "lich",
+      "health": 50,
+      "magicAttack": 5,
+      "magicDefense": 5,
+      "physicalAttack": 1,
+      "physicalDefense": 2,
+      "agility": 5
+    }
+  ]
+}

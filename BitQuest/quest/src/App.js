@@ -12,7 +12,7 @@ import "./App.css";
 
 
 function App() {
-  const usersURL = "https://finalprojectgame-b2bad-default-rtdb.firebaseio.com/.json";
+  const usersURL = "https://bitquest-caed9-default-rtdb.firebaseio.com/.json";
   const [databaseData, setDatabaseData] = useState(null);
   const [player, setPlayer] = useState()
   const usernames = [];

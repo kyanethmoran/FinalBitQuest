@@ -1,22 +1,12 @@
 import React from "react";
 import HealthCard from "./HealthCard";
 
-function PlayerCard({ player, playerHealth }) {
-  //console.log(player, "from playcard");
-
-  let { playerName } = player;
-  let { baseStats } = player;
-  let {
-    agility,
-    magicAttack,
-    magicDefense,
-    physicalAttack,
-    physicalDefense
-  } = baseStats;
+function PlayerCard({ playerHealth }) {
+  let username = window.sessionStorage.getItem("username");
 
   return (
     <>
-      <HealthCard name={playerName} currentHealth={playerHealth} />
+      <HealthCard name={username} currentHealth={playerHealth} />
     </>
   );
 }

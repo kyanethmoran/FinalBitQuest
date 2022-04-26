@@ -3,7 +3,7 @@ import HealthCard from './HealthCard'
 
 function EnemyCard({enemy, enemyHealth, maxHealth}) {
 
-    let { monsterName, agility, magicAttack, magicDefense, physicalAttack, physicalDefense } = enemy;
+    let { monsterName } = enemy;
     //console.log(enemy, 'from enemy card')
 
     let progressbarpercentage = Math.floor((enemyHealth/maxHealth)* 100) 

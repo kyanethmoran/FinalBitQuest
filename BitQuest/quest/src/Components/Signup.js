@@ -12,7 +12,7 @@ export default function Signup({ setShowLogin, usernames, setCurrentUser, curren
     setShowLogin(true)
   }
 
-  const URL = 'https://finalprojectgame-b2bad-default-rtdb.firebaseio.com/accounts.json'
+  const URL = 'https://bitquest-caed9-default-rtdb.firebaseio.com/accounts.json'
 
   const handleSignUp = (e) => {
     e.preventDefault()
@@ -20,7 +20,7 @@ export default function Signup({ setShowLogin, usernames, setCurrentUser, curren
     const password = e.target.password.value
     const name = e.target.name.value
     const email = e.target.email.value
-
+    window.sessionStorage.setItem("username", username);
     const newUserObj = {
       [username]: {
         "accountDetails": {

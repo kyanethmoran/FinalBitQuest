@@ -4,15 +4,17 @@ import { useNavigate, Link } from "react-router-dom";
 export default function Saves({setPlayer, player}) {
   const navigate = useNavigate();
   let currentUser = JSON.parse(window.sessionStorage.getItem("currentUser"));
+  let username = window.sessionStorage.getItem("username")
+  console.log(username, "username")
   //console.log(currentUser, "currentUser");
   let { characterSaves } = currentUser;
-  let {accountDetails} = currentUser;
+  console.log(currentUser)
 
   let handleClick = (e) => {
       let saveName = e.target.id;
       //console.log(saveName, "save name");
       //console.log(characterSaves[saveName], "character saves");
-      setPlayer({...characterSaves[saveName], playerName: accountDetails.userName});
+      setPlayer({...characterSaves[saveName], playerName: username});
       //console.log('current player is', player)
       navigate("/Instruction")
 
@@ -21,7 +23,7 @@ export default function Saves({setPlayer, player}) {
 
   return (
     <>
-      <h1 className="save_header">{accountDetails.userName}'s Saves</h1>
+      <h1 className="save_header">{username}'s Saves</h1>
       <section className="save_cardContainer">
       {Object.keys(characterSaves).map((saveName, index) => {
         return (

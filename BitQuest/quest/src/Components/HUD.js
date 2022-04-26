@@ -10,7 +10,7 @@ function HUD({ turn, playerMoves, setEnemyHealth, enemyHealth, setTurn, playerHe
 
   const handleMoveSelection = (e) => {
     let move = e.target.innerHTML;
-    let damage = playerMoves[move].attack;
+    let damage = playerMoves[move].attack * getRandomMultiplier(1,4);
     setEnemyHealth(enemyHealth - damage);
     setTurn("enemy");
   };

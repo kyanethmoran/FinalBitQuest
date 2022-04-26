@@ -33,7 +33,7 @@ function Intro({ classes, setPlayer, player }) {
     let {characterSaves} = currentUser
     console.log(username, 'username')
     
-    let URL = `https://finalprojectgame-b2bad-default-rtdb.firebaseio.com/accounts/${username}/characterSaves.json`
+    let URL = `https://bitquest-caed9-default-rtdb.firebaseio.com/accounts/${username}/characterSaves.json`
     axios.patch(URL, characterSaves)
     .then(res => {
       console.log(res, 'datta that was added');
