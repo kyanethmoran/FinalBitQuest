@@ -1,9 +1,9 @@
 import React from 'react'
 
-function EnemyCard({enemy}) {
+function EnemyCard({enemy, enemyHealth}) {
 
-    let { monsterName, agility, health, magicAttack, magicDefense, physicalAttack, physicalDefense } = enemy;
-    console.log(enemy, 'from enemy card')
+    let { monsterName, agility, magicAttack, magicDefense, physicalAttack, physicalDefense } = enemy;
+    //console.log(enemy, 'from enemy card')
 
   return (
     <>
@@ -13,7 +13,7 @@ function EnemyCard({enemy}) {
             </div>
             <div className="card-body">
                 <p>Agility: {agility}</p>
-                <p>Health: {health}</p>
+                <p>Health: {enemyHealth}</p>
                 <p>Magic Attack: {magicAttack}</p>
                 <p>Magic Defense: {magicDefense}</p>
                 <p>Physical Attack: {physicalAttack}</p>

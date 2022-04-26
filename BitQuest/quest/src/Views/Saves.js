@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 export default function Saves({setPlayer, player}) {
   const navigate = useNavigate();
   let currentUser = JSON.parse(window.sessionStorage.getItem("currentUser"));
-  console.log(currentUser, "currentUser");
+  //console.log(currentUser, "currentUser");
   let { characterSaves } = currentUser;
   let {accountDetails} = currentUser;
 

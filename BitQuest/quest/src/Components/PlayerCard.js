@@ -1,13 +1,12 @@
 import React from "react";
 
-function PlayerCard({ player }) {
-  console.log(player, "from playcard");
+function PlayerCard({ player, playerHealth }) {
+  //console.log(player, "from playcard");
 
   let { playerName } = player;
   let { baseStats } = player;
   let {
     agility,
-    health,
     magicAttack,
     magicDefense,
     physicalAttack,
@@ -18,7 +17,7 @@ function PlayerCard({ player }) {
     <>
       <h2>{playerName}</h2>
       <h3>Health</h3>
-      <h4>{health}</h4>
+      <h4>{playerHealth}</h4>
       <h3>Agility</h3>
       <h4>{agility}</h4>
       <h3>Magic Attack</h3>
