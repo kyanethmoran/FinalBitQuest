@@ -6,7 +6,7 @@ import HUD from "../Components/HUD"
 function ActiveBattleView({ player, enemy }) {
   // console.log(player, "player");
   let {moves} = player;
-  console.log(enemy, "enemy");
+  // console.log(enemy, "enemy");
 
   const [playerHealth, setPlayerHealth] = useState(player.baseStats.health);
   const [enemyHealth, setEnemyHealth] = useState(enemy.health);

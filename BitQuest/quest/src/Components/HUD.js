@@ -19,6 +19,11 @@ const handleEnemyTurn = () => {
 
 useEffect(() => {
     if(enemyHealth <= 0){
+        window.sessionStorage.setItem('battleOutcome', 'win')
+        navigate("/PostGame");
+    }
+    if(playerHealth <= 0){
+        window.sessionStorage.setItem('battleOutcome', 'lose')
         navigate("/PostGame");
     }
     if (turn === "enemy") {
@@ -26,7 +31,7 @@ useEffect(() => {
         setTimeout(() => {
             setPlayerHealth(playerHealth - enemyAttack)
             handleEnemyTurn()
-        }, 3000)
+        }, 100)
     }
 }, [turn])
 

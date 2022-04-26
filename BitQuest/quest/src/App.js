@@ -17,7 +17,8 @@ function App() {
   const [player, setPlayer] = useState()
   const usernames = [];
   const messages = [];
-
+  
+  
   const getUserAccounts = () => {
     axios.get(usersURL).then((res) => {
       setDatabaseData(res.data);
@@ -25,6 +26,7 @@ function App() {
   };
 
   useEffect(() => {
+    window.localStorage.setItem('gamesPlayed', 1)
     getUserAccounts();
   }, []);
 

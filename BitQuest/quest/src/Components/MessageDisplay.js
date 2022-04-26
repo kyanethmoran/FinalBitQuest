@@ -2,6 +2,7 @@ import React from "react";
 import {useNavigate} from 'react-router-dom'
 
 function MessageDisplay({ index, setIndex, messages }) {
+  let gamesPlayed = JSON.parse(window.localStorage.getItem('gamesPlayed'))
   const navigate = useNavigate();
   const msgArry = ['Welcome, player', "BitQuest is a turn based game.....", "KILL JOHN LENNON", "Since this is the last message in the array it needs to render a play button"];
 
@@ -37,6 +38,7 @@ function MessageDisplay({ index, setIndex, messages }) {
         </div>
         <section className='instructions_buttonsContainer'>
             <button className='instructions_button' onClick={handleNext}>Next </button>
+        {(gamesPlayed > 1) ? <button onClick={() => { navigate('/Battle')}} className='instructions_button'>SKIP</button> : null}
         </section>
       </div>
     )
