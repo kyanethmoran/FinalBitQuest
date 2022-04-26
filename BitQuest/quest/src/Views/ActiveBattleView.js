@@ -40,12 +40,9 @@ function ActiveBattleView({ player, enemy }) {
             maxHealth={enemy.health}
           />
         </section>
-        <button onClick={handleSubtractEnemyHealth}> Subtract Enemy Health</button>
-        <button onClick={handleSubtractHealth}> Subtract Health </button>
-        <button onClick={handleTurn}> Change Turn </button>
       </div>
       <section>
-        <HUD playerHealth={playerHealth} setPlayerHealth={setPlayerHealth} turn={turn} setTurn={setTurn} playerMoves={moves} setEnemyHealth={setEnemyHealth} enemyHealth={enemyHealth}/>
+        <HUD enemyAttack={enemy.physicalAttack} playerHealth={playerHealth} setPlayerHealth={setPlayerHealth} turn={turn} setTurn={setTurn} playerMoves={moves} setEnemyHealth={setEnemyHealth} enemyHealth={enemyHealth}/>
       </section>
     </>
   );

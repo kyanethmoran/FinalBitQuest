@@ -1,57 +1,96 @@
-import React, {useEffect} from "react";
-import {useNavigate} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-function HUD({ turn, playerMoves, setEnemyHealth, enemyHealth, setTurn, playerHealth, setPlayerHealth}) {
-const navigate = useNavigate();
-//   console.log(playerMoves, "player moves");
+function HUD({ turn, playerMoves, setEnemyHealth, enemyHealth, setTurn, playerHealth, setPlayerHealth, enemyAttack}) {
+  const navigate = useNavigate();
+  const getRandomMultiplier = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min);
+  };
+  const [enemyDamage, setEnemyDamage] = useState(enemyAttack * getRandomMultiplier(1,10));
 
-const handleMoveSelection = (e) => {
-    let move = e.target.innerHTML
-    let damage = playerMoves[move].attack
-    setEnemyHealth(enemyHealth - damage)
+  const handleMoveSelection = (e) => {
+    let move = e.target.innerHTML;
+    let damage = playerMoves[move].attack;
+    setEnemyHealth(enemyHealth - damage);
     setTurn("enemy");
-}
+  };
 
-const handleEnemyTurn = () => {
-    console.log("should be updating the turn")
-    setTurn('player')
-}
-
-useEffect(() => {
-    if(enemyHealth <= 0){
-        window.sessionStorage.setItem('battleOutcome', 'win')
-        navigate("/PostGame");
+  const handleHeal =()=>{
+    let newHealth = playerHealth + getRandomMultiplier(10, 40);
+    if(newHealth > 100){
+      newHealth = 100;
     }
-    if(playerHealth <= 0){
-        window.sessionStorage.setItem('battleOutcome', 'lose')
-        navigate("/PostGame");
+    setPlayerHealth(newHealth)
+    console.log(playerHealth, "playerHealth after heal")
+    setTurn("enemy");
+  }
+
+  const handleEnemyTurn = () => {
+    setTurn("player");
+  };
+
+  useEffect(() => {
+    let enemyMultiplier = getRandomMultiplier(1, 10);
+    let damage = enemyAttack * enemyMultiplier;
+    if (enemyHealth <= 0) {
+      window.sessionStorage.setItem("battleOutcome", "win");
+      navigate("/PostGame");
+    }
+    if (playerHealth <= 0) {
+      window.sessionStorage.setItem("battleOutcome", "lose");
+      navigate("/PostGame");
     }
     if (turn === "enemy") {
-        let enemyAttack = 10
-        setTimeout(() => {
-            setPlayerHealth(playerHealth - enemyAttack)
-            handleEnemyTurn()
-        }, 100)
+      setEnemyDamage(damage);
+      console.log(enemyDamage, "enemyDamage");
+      setPlayerHealth(playerHealth - (enemyDamage));
+      setTimeout(() => {
+        handleEnemyTurn();
+      }, 1500);
     }
-}, [turn])
+  }, [turn]);
 
   if (turn === "player") {
     return (
-    <div>
-      <h2>Player's Turn</h2>
       <div>
-        {Object.keys(playerMoves).map(move => (
-          <button onClick={handleMoveSelection} key={move}>{move}</button>
-        ))}
+        <h2>Player's Turn</h2>
+        <div>
+          <button onClick={handleHeal}>Heal</button>
+          {Object.keys(playerMoves).map((move) => (
+            <button onClick={handleMoveSelection} key={move}>
+              {move}
+            </button>
+          ))}
+        </div>
       </div>
-    </div>
     );
-  } else if (turn === "enemy") {
-      let enemyAttack = 10
-      //handleEnemyTurn(enemyAttack, playerHealth)
-  
-    return <div>Enemy did {enemyAttack} damage</div>;
-  }
+  } 
+  else if (turn === "enemy") {
+    console.log(playerHealth, "playerHealth")
+    if(playerHealth <= 30){
+        return (
+          <div>
+            <h1>You've been hit</h1>
+            <h1>YOU SUCK</h1>
+          </div>
+        )
+    }
+    else if(playerHealth <=50){
+        return (
+          <div>
+            <h1>You've been hit</h1>
+            <h1>YOU SHOULD HEAL</h1>
+          </div>
+        )
+    }
+    else {
+        return (
+          <div>
+            <h1>You've been hit</h1>
+          </div>
+        )
+    }
+  } 
   else {
     return <div>Error</div>;
   }

@@ -24,8 +24,8 @@ function GameInterlude() {
   return (
     <div>
       <h1>You Win!</h1>
-      <button onClick={handlePlayAgain}>Play Again</button>
-      <button onClick={handleReturnSave}>Return to Save Selection</button>
+      <button  onClick={handlePlayAgain}>Play Again</button>
+      <button  onClick={handleReturnSave}>Return to Save Selection</button>
     </div>
   )
   } else if (battleOutcome === "lose") {

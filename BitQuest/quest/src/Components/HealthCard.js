@@ -1,5 +1,6 @@
 import React from 'react'
-import { LinearProgress } from '@mui/material';
+import { LinearProgress, Typography } from '@mui/material';
+
 
 
 
@@ -11,6 +12,7 @@ function HealthCard({name, currentHealth}) {
         <h2>{name}</h2>
     
         <LinearProgress variant="determinate" value={currentHealth} />
+        <Typography variant="h6">{currentHealth}</Typography>
         
     </>
   )
